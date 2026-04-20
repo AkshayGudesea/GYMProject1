@@ -175,35 +175,32 @@ public class Main {
                     "L" + lessonCounter++, types[(weekend + 1) % types.length], "Saturday", "Evening", weekend, month,
                     getPrice(types[(weekend + 1) % types.length], yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
 
+            ExerciseType type = types[(weekend + 2) % types.length];
             system.getTimetable().addLesson(new Lesson(
-                    "L" + lessonCounter++, types[(weekend + 2) % types.length], "Sunday", "Morning", weekend, month,
-                    getPrice(types[(weekend + 2) % types.length], yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
+                    "L" + lessonCounter++, type, "Sunday", "Morning", weekend, month,
+                    getPrice(type, yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
 
+            ExerciseType type1 = types[(weekend + 3) % types.length];
             system.getTimetable().addLesson(new Lesson(
-                    "L" + lessonCounter++, types[(weekend + 3) % types.length], "Sunday", "Afternoon", weekend, month,
-                    getPrice(types[(weekend + 3) % types.length], yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
+                    "L" + lessonCounter++, type1, "Sunday", "Afternoon", weekend, month,
+                    getPrice(type1, yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
 
+            ExerciseType type2 = types[(weekend + 4) % types.length];
             system.getTimetable().addLesson(new Lesson(
-                    "L" + lessonCounter++, types[(weekend + 4) % types.length], "Sunday", "Evening", weekend, month,
-                    getPrice(types[(weekend + 4) % types.length], yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
+                    "L" + lessonCounter++, type2, "Sunday", "Evening", weekend, month,
+                    getPrice(type2, yogaPrice, zumbaPrice, aquacisePrice, boxFitPrice, bodyBlitzPrice), 4));
         }
     }
 
     private static double getPrice(ExerciseType type, double yogaPrice, double zumbaPrice,
                                    double aquacisePrice, double boxFitPrice, double bodyBlitzPrice) {
-        switch (type) {
-            case YOGA:
-                return yogaPrice;
-            case ZUMBA:
-                return zumbaPrice;
-            case AQUACISE:
-                return aquacisePrice;
-            case BOX_FIT:
-                return boxFitPrice;
-            case BODY_BLITZ:
-                return bodyBlitzPrice;
-            default:
-                return 10.0;
-        }
+        return switch (type) {
+            case YOGA -> yogaPrice;
+            case ZUMBA -> zumbaPrice;
+            case AQUACISE -> aquacisePrice;
+            case BOX_FIT -> boxFitPrice;
+            case BODY_BLITZ -> bodyBlitzPrice;
+            default -> 10.0;
+        };
     }
 }
