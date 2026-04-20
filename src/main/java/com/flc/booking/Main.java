@@ -1,10 +1,5 @@
 package main.java.com.flc.booking;
 
-import main.java.com.flc.booking.Member;
-import main.java.com.flc.booking.Lesson;
-import main.java.com.flc.booking.Booking;
-import main.java.com.flc.booking.ExerciseType;
-import main.java.com.flc.booking.FLCBookingSystem;
 
 import java.util.List;
 import java.util.Scanner;
