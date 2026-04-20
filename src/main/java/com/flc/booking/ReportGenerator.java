@@ -1,7 +1,5 @@
 package main.java.com.flc.booking;
 
-import main.java.com.flc.booking.Lesson;
-import main.java.com.flc.booking.ExerciseType;
 
 import java.util.HashMap;
 import java.util.List;
