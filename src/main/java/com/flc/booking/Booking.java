@@ -48,7 +48,7 @@ public class Booking {
 
     @Override
     public String toString() {
-        return bookingId + " | Member: " + member.getName() +
+        return bookingId + " | Member: " + member.name() +
                 " | Lesson: " + lesson.getLessonId() +
                 " | Status: " + status;
     }

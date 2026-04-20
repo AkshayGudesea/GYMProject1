@@ -36,7 +36,7 @@ public class FLCBookingSystem {
 
     public Member findMemberById(String memberId) {
         for (Member member : members) {
-            if (member.getMemberId().equalsIgnoreCase(memberId)) {
+            if (member.memberId().equalsIgnoreCase(memberId)) {
                 return member;
             }
         }
@@ -54,7 +54,7 @@ public class FLCBookingSystem {
 
     public boolean hasDuplicateBooking(Member member, Lesson lesson) {
         for (Booking booking : bookings) {
-            if (booking.getMember().getMemberId().equalsIgnoreCase(member.getMemberId())
+            if (booking.getMember().memberId().equalsIgnoreCase(member.memberId())
                     && booking.getLesson().getLessonId().equalsIgnoreCase(lesson.getLessonId())
                     && booking.getStatus() != BookingStatus.CANCELLED) {
                 return true;
@@ -65,7 +65,7 @@ public class FLCBookingSystem {
 
     public boolean hasTimeConflict(Member member, Lesson newLesson) {
         for (Booking booking : bookings) {
-            if (booking.getMember().getMemberId().equalsIgnoreCase(member.getMemberId())
+            if (booking.getMember().memberId().equalsIgnoreCase(member.memberId())
                     && booking.getStatus() != BookingStatus.CANCELLED) {
 
                 Lesson existing = booking.getLesson();
@@ -137,7 +137,7 @@ public class FLCBookingSystem {
 
         for (Booking other : bookings) {
             if (!other.getBookingId().equalsIgnoreCase(bookingId)
-                    && other.getMember().getMemberId().equalsIgnoreCase(member.getMemberId())
+                    && other.getMember().memberId().equalsIgnoreCase(member.memberId())
                     && other.getStatus() != BookingStatus.CANCELLED) {
 
                 Lesson existing = other.getLesson();

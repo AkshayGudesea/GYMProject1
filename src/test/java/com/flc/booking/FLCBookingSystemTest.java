@@ -16,7 +16,7 @@ public class FLCBookingSystemTest {
         Booking booking = system.bookLesson("M1", "L1");
 
         assertNotNull(booking);
-        assertEquals("M1", booking.getMember().getMemberId());
+        assertEquals("M1", booking.getMember().memberId());
     }
 
     @Test
